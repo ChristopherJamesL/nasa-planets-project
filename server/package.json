@@ -14,7 +14,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.6.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nasa-planets-project": "file:.."
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
