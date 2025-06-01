@@ -93,6 +93,13 @@ const AppLayout = props => {
             <Route exact path="/history">
               <History entered={anim.entered} launches={launches} />
             </Route>
+            <Route path="*">
+              <Launch 
+                entered={anim.entered}
+                planets={planets}
+                submitLaunch={submitLaunch}
+                isPendingLaunch={isPendingLaunch} />
+            </Route>
           </Switch>
           </div>
         )}
