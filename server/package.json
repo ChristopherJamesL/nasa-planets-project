@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "csv-parse": "^5.6.0",
     "express": "^5.1.0",
+    "morgan": "^1.10.0",
     "nasa-planets-project": "file:.."
   },
   "devDependencies": {
