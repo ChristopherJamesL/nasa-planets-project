@@ -6,7 +6,8 @@
     "test": "node --test",
     "test-watch": "node --test --watch",
     "watch": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "csv-parse": "^5.6.0",
     "express": "^5.1.0",
     "morgan": "^1.10.0",
-    "nasa-planets-project": "file:.."
+    "nasa-planets-project": "file:..",
+    "pm2": "^6.0.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
