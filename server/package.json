@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "csv-parse": "^5.6.0",
     "express": "^5.1.0",
+    "mongoose": "^8.15.1",
     "morgan": "^1.10.0",
     "nasa-planets-project": "file:..",
     "pm2": "^6.0.8"
