@@ -3,8 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
-const planetsRouter = require('./routes/planets/planets.router');
-const launchesRouter = require('./routes/launches/launches.router');
+const api = require('./routes/api');
 
 const app = express();
 
@@ -15,9 +14,7 @@ app.use(morgan('combined'));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
-
-app.use('/planets', planetsRouter);
-app.use('/launches', launchesRouter);
+app.use('/v1', api);
 
 app.use((err, req, res, next) => {
   console.error(err); // Log error to console for debugging
@@ -28,7 +25,9 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/{*splat}', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
+
+// console.log(app.router.stack.length);
 
 module.exports = app;
