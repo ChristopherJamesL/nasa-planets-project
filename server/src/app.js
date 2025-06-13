@@ -19,6 +19,14 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/planets', planetsRouter);
 app.use('/launches', launchesRouter);
 
+app.use((err, req, res, next) => {
+  console.error(err); // Log error to console for debugging
+  res.status(400).json({
+    error: err.message || 'Something went wrong',
+    stack: err.stack,
+  });
+});
+
 app.get('/{*splat}', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
