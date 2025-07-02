@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/v1', api);
 
 app.use((err, req, res, next) => {
-  console.error(err); // Log error to console for debugging
+  console.error(err); 
   res.status(400).json({
     error: err.message || 'Something went wrong',
     stack: err.stack,
@@ -27,7 +27,5 @@ app.use((err, req, res, next) => {
 app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
-
-// console.log(app.router.stack.length);
 
 module.exports = app;
